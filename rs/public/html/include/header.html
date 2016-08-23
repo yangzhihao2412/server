@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>顶部</title>
+<link type="text/css" rel="stylesheet" href="../../css/head.css" />
+<script type="text/javascript" src="../../js/jquery.min.js"></script>
+</head>
+
+<body style="background: ##293846;">
+	<div class="add_login eliminate">
+		<div class="f_l logo">
+			<img src="../../img/logo.png" alt="" />
+		</div>
+		<div class="login f_r">
+			<div class="login_img f_l">
+				<div class="touxiang">
+					<img width="35" src="../../img/avatar3.jpg" alt="" />
+				</div>
+				<!--<div class="xiaoxi"></div>
+			<div class="xiala">111</div>-->
+			</div>
+			<div class="f_l">
+				<a href="javascript:;" id="username">admin</a>
+			</div>
+			<div class="f_r tuichu" id="logout">
+				<a href="javascript:void(0)">退出</a>
+			</div>
+		</div>
+	</div>
+	<script>
+//by xuelin
+$(document).ready(function(){
+	$('#username').text(parent.$raise.user.name);
+	$('#logout').on('click',function(){
+		$.getJSON(parent.$raise.logoutUrl,function(result){
+			
+			if(result.code == 1){
+				
+				top.location.href='/';
+			}
+			
+		});
+		
+		
+	});
+	
+});
+</script>
+</body>
+</html>

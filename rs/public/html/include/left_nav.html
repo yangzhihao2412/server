@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>左导航</title>
+<link rel="stylesheet" href="../../fonts/font-awesome.css" />
+<link rel="stylesheet" href="../../css/test/style.css" />
+<link rel="stylesheet" href="../../css/test/style.min.css" />
+<style type="text/css">
+body {
+	width: 100%;
+	background:#3e9fd5;
+	background: -webkit-linear-gradient(#3e9fd5, #175c98);
+	background: -moz-linear-gradient(#3e9fd5, #175c98);
+	background: -o-linear-gradient(#3e9fd5, #175c98);
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(#3e9fd5),
+		to(#175c98));
+	background: linear-gradient(#3e9fd5, #175c98); /* Safari 5.1 - 6.0 */
+	/* Opera 11.1 - 12.0 */ /* Firefox 3.6 - 15 */ /* 标准的语法 */
+}
+
+.current {
+	color: white;
+	display: block;
+}
+
+.current span {
+	color: white;
+}
+</style>
+</head>
+
+<body>
+	<div class="logo pl_25">
+		<img src="../../img/test/logo-left.png" alt="logo" />
+	</div>
+	<div class="nav clearfix">
+		<dl class="menu menu-hide">
+			<dt class="clearfix">
+				<a class="current" target="rightFrame" href="/data/daily"><img
+					class="f_l" style="margin-top: 3px;"
+					src="../../img/test/boaobiaokj.png" alt="" /><span class="f_l f16"
+					style="color: white;">报表</span></a>
+			</dt>
+			<!--<dd>
+			<a class="current" target="rightFrame" href="/data/daily">销售人员管理</a>
+		</dd>-->
+		</dl>
+		<dl class="menu menu-hide">
+			<dt class="clearfix">
+				<img class="f_l mt_5" src="../../img/test/sheji.png" alt="" /><span
+					class="f_l f16">系统管理</span>
+			</dt>
+			<dd>
+				<a target="rightFrame" href="/data/monthly">销售人员管理</a>
+			</dd>
+			<!--<dd>
+				<a target="rightFrame" href="/data/annual">用户管理</a>
+			</dd>-->
+			<dd>
+				<a target="rightFrame" href="/data/charge">组织结构</a>
+			</dd>
+			<dd>
+				<a target="rightFrame" href="/data/quarterly">角色管理</a>
+			</dd>
+			<dd>
+				<a target="rightFrame" href="/data/registered">用户管理</a>
+			</dd>
+		</dl>
+		<dl class="menu menu-hide">
+			<dt class="clearfix">
+				<img class="f_l mt_5" src="../../img/zichanjiabaofoo.png" alt="" /><span
+					class="f_l f16">资产加用户查询</span>
+			</dt>
+			<dd>
+				<a target="rightFrame" href="/raise/userdesc">用户详情信息</a>
+			</dd>
+			<dd>
+				<a target="rightFrame" href="/raise/baofoorecord">宝付交易记录查询</a>
+			</dd>
+		</dl>
+	</div>
+	<script type="text/javascript" src="../../js/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  	bg_szie();
+  	$(window).resize(function(){
+  		bg_szie();
+  	});
+  	function bg_szie(){
+  		var opw = $(window).height();
+  		$("body").css("height",opw+"px");
+  	};
+	
+  	$(".menu dt").click(function(){
+		if($(this).parent().hasClass("menu-hide")){
+			$(this).parent().removeClass("menu-hide");
+		}else{
+			$(this).parent().addClass("menu-hide");
+		}
+	});
+	$(".menu").find("a").bind("click",function(){
+		$(".menu").find("a").removeClass("current");
+		$(this).addClass("current");
+		//parent.main.location.href = $(this).attr("href");
+		//return false;
+	});
+	$(".menu").find("a").first().click();
+  });
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	
+});
+</script>
+
+</body>
+</html>
